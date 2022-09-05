@@ -5,6 +5,7 @@ const splide = new Splide("#splide", {
   arrows: false,
   autoplay: true,
   interval: 4000,
+  speed: 800,
 });
 
 splide.mount();
