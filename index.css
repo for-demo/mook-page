@@ -909,6 +909,10 @@ body {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -1659,6 +1663,10 @@ body {
 
   .xl\:mb-16 {
     margin-bottom: 4rem;
+  }
+
+  .xl\:block {
+    display: block;
   }
 
   .xl\:grid {
