@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 基礎共用 */
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    src: url("./fonts/Inter-Regular.ttf") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    src: url("./fonts/Inter-SemiBold.ttf") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansTC";
+    font-weight: 300;
+    src: url("./fonts/NotoSansTC-Light.otf") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansTC";
+    font-weight: 400;
+    src: url("./fonts/NotoSansTC-Regular.otf") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansTC";
+    font-weight: 500;
+    src: url("./fonts/NotoSansTC-Medium.otf") format("woff2");
+  }
+  @font-face {
+    font-family: "NotoSansTC";
+    font-weight: 700;
+    src: url("./fonts/NotoSansTC-Bold.otf") format("woff2");
+  }
+
+  html {
+    scroll-padding-top: 60px !important;
+  }
+
+  @screen xl {
+    html {
+      scroll-padding-top: 160px !important;
+    }
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  .header-active {
+    @apply bg-white;
+  }
+
+  .bg-shadow {
+    @apply hidden;
+  }
+
+  .header-active .bg-shadow {
+    @apply block bg-black bg-opacity-70 fixed top-[55px] left-0 w-screen h-screen;
+  }
+
+  .header-scrolled {
+    @apply !bg-secondary-grayBlue !items-center !py-4;
+  }
+
+  .header-scrolled .logo {
+    @apply xl:!max-w-[165px] max-w-[100px];
+  }
+
+  .header-scrolled .menuIcon span {
+    @apply !bg-black;
+  }
+
+  .header-scrolled .navbar a {
+    @apply !text-primary hover:!border-secondary-blue hover:!text-secondary-blue;
+  }
+
+  .menuIcon-active span:nth-child(1) {
+    @apply bg-primary absolute top-0 left-0 rotate-45 w-10 !mt-0;
+  }
+
+  .menuIcon-active span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .menuIcon-active span:nth-child(3) {
+    @apply bg-primary absolute top-0 right-0 -rotate-45 w-10 !mt-0;
+  }
+
+  .navbar {
+    @apply xl:block xl:visible xl:opacity-100 invisible opacity-0 xl:static fixed top-[55px] left-0 xl:bg-transparent bg-white xl:w-auto w-full duration-200;
+  }
+
+  .navbar-active {
+    @apply !visible !opacity-100 z-10;
+  }
+
+  .show {
+    @apply !opacity-100 !visible;
+  }
+}
